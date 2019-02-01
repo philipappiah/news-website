@@ -1,0 +1,129 @@
+
+{% include "structure.html" %}
+
+<style>
+
+
+     .button{
+        margin-left: -87%;
+
+    }
+
+     #myList{
+         line-height: 100%;
+     }
+
+ @media screen and (max-width: 500px) {
+
+    #myList{
+        line-height: 200%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+     #desc{
+         margin-top: -5%;
+         position: absolute;
+
+     }
+     .button{
+
+         height: 20px;
+         margin-left: -500%;
+
+
+
+     }
+
+}
+
+
+
+
+</style>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+{% load staticfiles %}
+         <link rel="stylesheet" type="text/css" href="{% static "css/galastyle2.css" %}">
+
+
+<body>
+<div class="navbar">
+  <a class="active" href=""><i class="fa fa-fw fa-home"></i> Home</a>
+  <a href="totalballot.html"><i style="font-size:24px" class="fa fa-bar-chart"></i>Statistics</a>
+  <a href=""><i class="fa fa-fw fa-envelope"></i> Contact</a>
+  <a href=""><i class="fa fa-fw fa-user"></i> Login</a>
+</div>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">Regional Level Statistics</a>
+  <a href="#">District Level Statistics</a>
+  <a href="#">Gender Statistics</a>
+  <a href="#">About</a>
+</div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+
+<script>
+
+    function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+<body>
+
+
+
+
+<h2 style="margin-left: 20%">Welcome, please select the voting category</h2>
+
+<ul id="myList">
+
+
+    <li class="more">
+
+
+          <a id="more" href="presidential.html" target="_parent"><h1>Presidential</h1><br>
+
+           </a>
+    </li>
+
+  <li class="more">
+
+
+          <a id="more" href="parliamentary.html" target="_parent" ><h1>Parliamentary</h1><br>
+
+           </a>
+    </li>
+
+
+</ul>
+
+
+
+
+
+
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myList");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+</body>

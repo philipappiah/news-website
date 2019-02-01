@@ -1,0 +1,18 @@
+ .details li {
+      list-style: none;
+    }
+    li {
+        margin-bottom:10px;
+
+    }
+    a:hover{
+        text-decoration: none;
+    }
+
+      @media screen and (max-width: 500px) {
+
+    #message{
+        width: 100%;
+    }
+
+}

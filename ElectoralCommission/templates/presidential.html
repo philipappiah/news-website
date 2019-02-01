@@ -1,0 +1,167 @@
+
+{% include "structure.html" %}
+
+<style>
+
+
+     .button{
+        margin-left: -87%;
+
+    }
+
+     #myList{
+         line-height: 100%;
+     }
+
+ @media screen and (max-width: 500px) {
+
+    #myList{
+        line-height: 200%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+     #desc{
+         margin-top: -5%;
+         position: absolute;
+
+     }
+     .button{
+
+         height: 20px;
+         margin-left: -500%;
+
+
+
+     }
+     img{
+    width: 50px;
+    height: 50px;
+}
+
+     h1{
+         margin-top: 5%;
+     }
+
+}
+img{
+    width: 120px;
+    height: 120px;
+}
+h1{
+    text-align: center;
+    position: relative;
+    margin-top: -5%;
+
+}
+
+
+</style>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+{% load staticfiles %}
+         <link rel="stylesheet" type="text/css" href="{% static "css/galastyle2.css" %}">
+
+<style>
+
+</style>
+<body>
+<script>
+    function f() {
+            document.getElementById("hi").style.color="red";
+    }
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+  $("#hii").click(function(){
+       var username = $("#name").text()
+
+
+    $.ajax({
+
+           type: 'POST',
+
+           url:'count',
+           data:{
+               username:username,
+
+               csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+
+           },
+           success:function () {
+
+            alert(username);
+
+           }
+
+           });
+
+  });
+});
+  </script>
+
+<h1 id="name">Philip</h1>
+<h2 style="margin-left: 30%">Click to Vote for your Presidential Candidate</h2>
+    {% if presidents %}
+
+<ul id="myList">
+            {% for names in presidents %}
+
+
+    <li class="more">
+        {% load staticfiles %}
+
+
+        <a id="inside" href="#" target="_parent"><img src="{{ names.image.url }}"  style="border-radius: 50%"><h1>{{ names.fullname }}</h1><h1><br>
+            <a href="{% url 'presvotes' names.id %}">
+               {% csrf_token %}
+              <form action="" id="myform" method="POST" class="post-form" enctype="multipart/form-data">
+
+              <i id="hi" class="fa fa-thumbs-down" style="margin-top: 3%;font-size: 80px;color: blue"></i>
+
+              </form>
+
+          </a>
+
+          </h1><br>
+
+
+           </a>
+    </li>
+
+{% endfor %}
+
+
+
+
+</ul>
+{% else %}
+<h3> No product found.</h3>
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>

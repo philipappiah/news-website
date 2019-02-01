@@ -1,0 +1,27 @@
+    img{
+        margin-bottom: 5%;
+    }
+
+    .button{
+        margin-left: -97%;
+
+    }
+
+    #description{
+       position: absolute;
+        margin-left: 30%;
+        margin-top: -15%;
+    }
+
+
+     @media screen and (max-width: 500px) {
+
+        .button {
+            margin-left: -77%;
+        }
+}
+
+
+    #content{
+        margin-left: 15%;
+    }

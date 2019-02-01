@@ -1,0 +1,35 @@
+ img{
+        margin-bottom: 5%;
+    }
+
+    .button{
+        margin-left: -100%;
+        margin-top: 15%;
+
+    }
+
+    #description{
+       position: absolute;
+        margin-left: 30%;
+        margin-top: -10%;
+    }
+
+    #movie{
+        margin-top: 3%;
+    }
+
+    #view{
+        margin-left: 25%;
+    }
+
+    @media screen and (max-width: 500px) {
+
+        .button{
+        margin-left: -77%;
+    }
+        #image{
+            margin-left: -20%;
+            margin-top: 5%;
+        }
+
+}
