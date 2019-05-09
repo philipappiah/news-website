@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+ <script>
+var openWeatherAppId = 'dc80b249a00be61db540205a424868f3',
+openWeatherUrl = 'http://api.openweathermap.org/data/2.5/forecast'
+var prepareData = function(units) {
+var cityName = $('#city-name').val();
+if (cityName && cityName != ''){
+cityName = cityName.trim();
+getData(openWeatherUrl, cityName, openWeatherAppId, units)
+}
+else {
+alert('Please enter the city name')
+}
+}
+$(document).ready(function(){
+$('.btn-metric').click(function() {
+prepareData('metric')
+})
+$('.btn-imperial').click(function() {
+    prepareData('imperial')
+    })
+})
+
+function getData (url, cityName, appId, units) {
+var request = $.ajax({
+url: url,
+dataType: 'jsonp',
+data: {
+q: cityName,
+appid: appId,
+units: units
+},
+jsonpCallback: 'fetchData',
+type: 'GET'
+}).fail(function(error){
+console.error(error)
+alert('Error sending request')
+})
+}
+function fetchData (forecast) {
+console.log(forecast)
+var html = '',
+cityName = forecast.city.name,
+country = forecast.city.country
+html += '<h3> Weather Forecast for '
++ cityName
++ ', '
++ country
++ '</h3>'
+forecast.list.forEach(function(forecastEntry, index, list){
+html += '<p>'
++ forecastEntry.dt_txt
++ ': '
++ forecastEntry.main.temp
++ '</p>'
+})
+$('#log').html(html)
+}
+ </script>
+</head>
+<body>
+ <div class="container">
+<div class="row">
+<div class="span4 offset 3">
+<h2>Weather App</h2>
+<p>Enter city name to get the weather forecast</p>
+</div>
+<div class="span6 offset1"><input class="span4" type="text"
+    placeholder="Enter the city name" id="city-name" value=""/>
+    </div>
+    </div>
+    <div class="row">
+    <div class="span6 offset1"><input type="button" class="btnprimary btn btn-metric" value="Get forecast in metric"/>
+    <div class="span6 offset1"><input type="button"
+    class="btn-danger btn btn-imperial" value="Get forecast in imperial"/>
+    </div>
+    <div class="span3">
+    <p id="info"></p>
+    </div>
+    </div>
+    <div class="row">
+    <div class="span6 offset1">
+    <div id="log">Nothing to show yet</div>
+    </div>
+    </div>
+    <div class="row">
+    <hr/>
+    
+    </div>
+     </div>
+    </body>
+    </html>
