@@ -1,1 +1,1 @@
-
+GHNews is an authoritative media website that seeks to bring the latest and most verified news from in-country and around the world to users. We are currently developing machine learning algorithms to detect and reduce the spread of fake news. This news outlet encourages user engagement by allowing users to add their own news items. We are also in the process of developing a payment module where users get paid based on the views and comments on their news items.
