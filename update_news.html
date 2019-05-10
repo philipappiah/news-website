@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Ghnews</title>
+
+  
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+
+  
+
+</head>
+
+<body>
+    <div id = "adder">
+
+        <div class="signup__container">
+                <div class="container__child signup__thumbnail">
+                  
+                  <div class="thumbnail__content text-center">
+                    <h1 class="heading--primary">Welcome to </h1>
+                    <h2 class="heading--secondary">Admin Section</h2>
+                  </div>
+                  
+                  <div class="signup__overlay"></div>
+                </div>
+                <div class="container__child signup__form">
+                  <form action="addtodatabase.php" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                      <label for="username">Item name</label>
+                      <input class="form-control" type="text" name="itemname" id="itemname" placeholder="Dashiki" required />
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Type</label>
+                      <input class="form-control" type="text" name="type" id="type" placeholder="African Wear" required />
+                    </div>
+                    <div class="form-group">
+                      <label for="password">Price</label>
+                      <input class="form-control" type="price" name="price" id="price" placeholder="GH 50" required />
+                    </div>
+                    <div class="form-group"> 
+                      <label for="passwordRepeat">Description</label>
+                      <input class="form-control" type="textarea" name="description" id="description" placeholder="Made from the best woodin Fabric.." required />
+                    </div>
+                    <div class="form-group">
+                      <label for="category">Category</label>
+                      <select name="category">
+                        <option value="general">General</option>
+                        <option value="men">Men</option>
+                        <option value="women">Women</option>
+                        <option value="couple">Couples</option>
+                        <option value="children">Children</option>
+                      </select> 
+                    </div>
+        
+                    <div class="form-group">
+                      
+                           
+                            <label for="file">Upload Photo</label>
+                            <input class="form-control" type='file'   name="image" id="image" placeholder="Click to upload image" required />
+                    </div>
+                    
+                    <div class="m-t-lg">
+                      <ul class="list-inline">
+                        <li>
+                          <input class="btn btn--form" type="submit" name="submit" value="Add Item" />
+                          
+                        </li>
+                        <li>
+                         
+                        </li>
+        
+                        
+                      </ul>
+                    </div>
+                  </form>  
+                </div>
+              </div>
+        
+            </div>
+        
+            
+            <img id="show_image">
+            
+
+            <script type="text/javascript">
+                function readURL(input) {
+                            if (input.files && input.files[0]) {
+                                var reader = new FileReader();
+                                
+                                reader.onload = function (e) {
+                                    $('#show_image').attr('src', e.target.result);
+                                }
+                                reader.readAsDataURL(input.files[0]);
+                            }
+                        }
+                        $("#image").change(function(){
+                            readURL(this);
+                        });
+                </script>
+                
+                
+</body>
+
+
+</html>

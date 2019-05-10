@@ -1,0 +1,147 @@
+
+<!doctype html>
+<html>
+
+<head>
+
+
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+</head>
+
+<body>
+
+<form class="form-horizontal" action="addtodatabase.php" method="POST" enctype="multipart/form-data">
+  <fieldset>
+    <div id="legend">
+      <legend class="">Add News Item</legend>
+    </div>
+    
+ 
+    <div class="control-group">
+      <!-- E-mail -->
+      <label class="control-label" for="headline">News Headline</label>
+      <div class="controls">
+        <input type="text"  id="headline" name="headline" placeholder="" class="input-xlarge" required>
+        <p class="help-block">Enter news headline</p>
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- Password-->
+      <label class="control-label" for="description">News Body/Description</label>
+      <div class="controls">
+        <textarea type="text" id="description" name="description" placeholder="" class="input-xlarge" required></textarea>
+        <p class="help-block">Enter details of news item</p>
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- Password -->
+      <label class="control-label"  for="source">News Source</label>
+      <div class="controls">
+        <input type="text" id="source" name="source" placeholder="" class="input-xlarge" required>
+        <p class="help-block">Please confirm the source of the news item</p>
+      </div>
+    </div>
+
+    <div class="control-group">
+            <!-- Password -->
+            <label class="control-label"  for="source-link">Link to News Source</label>
+            <div class="controls">
+              <input type="text" id="link" name="link" placeholder="" class="input-xlarge" required>
+              <p class="help-block">Please provide the link to the source of the news item</p>
+            </div>
+          </div>
+
+    <div class="control-group">
+            <label for="category">News Category</label>
+            <div class="controls">
+            <select name="category">
+              <option value="general">Headlines</option>
+              <option value="business">Business</option>
+              <option value="entertainment">Entertainment</option>
+              <option value="sports">Sports</option>
+              <option value="foreign">Foreign</option>
+            </select> 
+        </div>
+    </div>
+
+    <div class="control-group">
+                      
+                           
+            <label for="file">Upload Related Photo 1</label>
+        <div class="controls">
+            <input class="form-control" type='file'   name="image1" id="image1" placeholder="Click to upload image" accept="image/*" required />
+        </div>
+    </div>
+
+    <div class="control-group">
+                      
+                           
+            <label for="file2">Upload Related Photo 2</label>
+        <div class="controls">
+            <input class="form-control" type='file'   name="image2" id="image2" placeholder="Click to upload image" accept="image/*"   />
+        </div>
+    </div>
+
+
+    <div class="control-group">
+                      
+                           
+            <label for="file">Upload Related Photo 3</label>
+        <div class="controls">
+            <input class="form-control" type='file'   name="image3" id="image3" placeholder="Click to upload image"  accept="image/*"  />
+        </div>
+    </div>
+
+
+    <div class="control-group">
+                      
+                           
+            <label for="file">Upload Related Photo 4</label>
+        <div class="controls">
+            <input class="form-control" type='file'   name="image4" id="image4" placeholder="Click to upload image" accept="image/*"  />
+        </div>
+    </div>
+
+
+
+    <div class="control-group">
+                      
+                           
+            <label for="file">Upload Related Photo 5</label>
+        <div class="controls">
+            <input class="form-control" type='file'   name="image5" id="image5" placeholder="Click to upload image" accept="image/*"  />
+        </div>
+    </div>
+ 
+    <div class="control-group">
+                      
+                           
+            <label for="file">Upload Related <b>Video</b></label>
+        <div class="controls">
+            <input class="form-control" type='file'   name="video" id="video" placeholder="Click to upload video" accept="video/*"  />
+        </div>
+    </div>
+ 
+ 
+
+
+ 
+ 
+ 
+    <div class="control-group">
+      <!-- Button -->
+      <div class="controls">
+        <button type="submit" class="btn btn-success" style="width:15%">Submit</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+</body>
+</html>
